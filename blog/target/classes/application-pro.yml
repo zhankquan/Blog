@@ -1,0 +1,46 @@
+spring:
+
+
+
+  datasource:
+    username: root
+    password: 123
+    url: jdbc:mysql://39.99.141.200:3306/blog?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initialization-mode: always
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+
+
+    #   \u6570\u636E\u6E90\u5176\u4ED6\u914D\u7F6E
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+
+    #   \u914D\u7F6E\u76D1\u63A7\u7EDF\u8BA1\u62E6\u622A\u7684filters\uFF0C\u53BB\u6389\u540E\u76D1\u63A7\u754C\u9762sql\u65E0\u6CD5\u7EDF\u8BA1\uFF0C'wall'\u7528\u4E8E\u9632\u706B\u5899
+    filters: stat,wall,slf4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+logging:
+  level:
+    root: warn
+    com.zkq: info
+  file:
+    path: log/blog-pro.log
+server:
+  port: 8081

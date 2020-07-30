@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bb7a255c-a287-41d7-8048-871ef6d45c8a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven-3.5.2\repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../../maven/Apache/maven" />
+        <option name="userSettingsFile" value="D:\maven\Apache\maven\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1exQtNyD5XVcbHSshMQwW0teRoM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../blog2" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="Docker" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.zkq.blog" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zkq.blog.web" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IDEA\project\blog\src\main\resources\templates" />
+      <recent name="D:\IDEA\project\blog\src\main\resources\static\images" />
+      <recent name="D:\IDEA\project\blog\src\main\resources\static" />
+      <recent name="D:\IDEA\project\blog\src\main\resources\templates\admin" />
+      <recent name="D:\IDEA\project\blog\src\main\java\com\zkq\blog" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BlogApplication">
+    <configuration name="MD5Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zkq.blog.util.MD5Utils" />
+      <module name="blog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zkq.blog.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MarkdownUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zkq.blog.util.MarkdownUtils" />
+      <module name="blog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zkq.blog.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="blog" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zkq.blog.BlogApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Docker Image" type="docker-deploy" factoryName="docker-image" temporary="true" server-name="阿里云docker">
+      <deployment type="docker-image">
+        <settings>
+          <option name="imageTag" value="springboot/blog:latest" />
+          <option name="command" value="-t" />
+          <option name="containerName" value="myblog" />
+          <option name="entrypoint" value="" />
+          <option name="portBindings">
+            <list>
+              <DockerPortBindingImpl>
+                <option name="containerPort" value="8080" />
+                <option name="hostPort" value="8080" />
+              </DockerPortBindingImpl>
+            </list>
+          </option>
+          <option name="commandLineOptions" value="" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.Docker Image" />
+        <item itemvalue="Docker.Docker Image" />
+        <item itemvalue="Docker.Docker Image" />
+        <item itemvalue="Docker.Docker Image" />
+        <item itemvalue="Docker.Docker Image" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bb7a255c-a287-41d7-8048-871ef6d45c8a" name="Default Changelist" comment="" />
+      <created>1595260977854</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595260977854</updated>
+      <workItem from="1595260985424" duration="956000" />
+      <workItem from="1595262818867" duration="95000" />
+      <workItem from="1595263031670" duration="232000" />
+      <workItem from="1595263655441" duration="183000" />
+      <workItem from="1595263897572" duration="801000" />
+      <workItem from="1595314050745" duration="742000" />
+      <workItem from="1595314824137" duration="59000" />
+      <workItem from="1595314935116" duration="21000" />
+      <workItem from="1595314979510" duration="13000" />
+      <workItem from="1595315001443" duration="1020000" />
+      <workItem from="1595316102719" duration="15000" />
+      <workItem from="1595316243513" duration="47000" />
+      <workItem from="1595316346648" duration="20000" />
+      <workItem from="1595316407870" duration="48000" />
+      <workItem from="1595316483274" duration="82000" />
+      <workItem from="1595316589631" duration="7876000" />
+      <workItem from="1595326507533" duration="1194000" />
+      <workItem from="1595327741749" duration="3044000" />
+      <workItem from="1595331652442" duration="5908000" />
+      <workItem from="1595342384517" duration="23000" />
+      <workItem from="1595342416495" duration="8507000" />
+      <workItem from="1595387655141" duration="14303000" />
+      <workItem from="1595412007050" duration="50000" />
+      <workItem from="1595412721589" duration="230000" />
+      <workItem from="1595413145157" duration="228000" />
+      <workItem from="1595413386607" duration="64000" />
+      <workItem from="1595413752367" duration="325000" />
+      <workItem from="1595414292942" duration="17037000" />
+      <workItem from="1595447612428" duration="1522000" />
+      <workItem from="1595449161609" duration="173000" />
+      <workItem from="1595471800992" duration="45485000" />
+      <workItem from="1595563820404" duration="35932000" />
+      <workItem from="1595644098442" duration="22097000" />
+      <workItem from="1595669801485" duration="605000" />
+      <workItem from="1595677348537" duration="7892000" />
+      <workItem from="1595685290405" duration="751000" />
+      <workItem from="1595697137358" duration="276000" />
+      <workItem from="1595731158531" duration="40000" />
+      <workItem from="1595731364975" duration="292000" />
+      <workItem from="1595733721875" duration="4357000" />
+      <workItem from="1595739523388" duration="5061000" />
+      <workItem from="1595745354907" duration="1730000" />
+      <workItem from="1595748210615" duration="1116000" />
+      <workItem from="1595816572265" duration="46125000" />
+      <workItem from="1595905674356" duration="9579000" />
+      <workItem from="1595929483801" duration="3042000" />
+      <workItem from="1595940625774" duration="595000" />
+      <workItem from="1595993191500" duration="33000" />
+      <workItem from="1595993348784" duration="59000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="662" y="302" key="#Assign_Data_Sources" timestamp="1595389474193">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="662" y="302" key="#Assign_Data_Sources/0.0.1536.824@0.0.1536.824" timestamp="1595389474193" />
+    <state x="465" y="31" key="#Docker_Image" timestamp="1595941058379">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="31" key="#Docker_Image/0.0.1536.824@0.0.1536.824" timestamp="1595941058379" />
+    <state x="762" y="91" key="#Inspections" timestamp="1595390573716">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="762" y="91" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1595390573716" />
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595389242467">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1595389242467" />
+    <state x="942" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1595850387540">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="942" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1595850387540" />
+    <state x="544" y="279" width="448" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1595317411399">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="544" y="279" width="448" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1595317411399" />
+    <state x="870" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595844814781">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="870" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1595844814781" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1595993225758">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1595993225758" />
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1595993407053">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595993407053" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1595993407053">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1595993407053" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1595993407053">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1595993407053" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1595993407053">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1595993407053" />
+    <state width="1493" height="213" key="GridCell.Tab.1.bottom" timestamp="1595993407054">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595993407054" />
+    <state width="1493" height="213" key="GridCell.Tab.1.center" timestamp="1595993407053">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1595993407053" />
+    <state width="1493" height="213" key="GridCell.Tab.1.left" timestamp="1595993407053">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1595993407053" />
+    <state width="1493" height="213" key="GridCell.Tab.1.right" timestamp="1595993407053">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1595993407053" />
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1595865843797">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1595865843797" />
+    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1595865843797">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1595865843797" />
+    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1595865843797">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1595865843797" />
+    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1595865843797">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1595865843797" />
+    <state x="598" y="68" key="Maven.ArtifactSearchDialog" timestamp="1595593396943">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="598" y="68" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1595593396943" />
+    <state x="311" y="114" key="SettingsEditor" timestamp="1595930323377">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="311" y="114" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1595930323377" />
+    <state width="505" height="446" key="SwitcherDM" timestamp="1595334201442">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="505" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1595334201442" />
+    <state x="667" y="308" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize" timestamp="1595941050336">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="667" y="308" key="com.intellij.docker.deployment.ui.DockerPortBindingsField.v173.dialogSize/0.0.1536.824@0.0.1536.824" timestamp="1595941050336" />
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595263109769">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1595263109769" />
+    <state x="499" y="172" key="extract.method.dialog" timestamp="1595909400308">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="172" key="extract.method.dialog/0.0.1536.824@0.0.1536.824" timestamp="1595909400308" />
+    <state x="178" y="73" key="new project wizard" timestamp="1595658219127">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="73" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1595658219127" />
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1595564898452">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1595564898452" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/../../../Desktop/myblog-master/src/main/resources/templates/message_board.html</url>
+          <line>207</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

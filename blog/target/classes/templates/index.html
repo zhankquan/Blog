@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>kq Blog</title>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet"  href="../static/css/me.css">
+</head>
+<body>
+    <!--导航-->
+    <nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment m-padded-tb-mini">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">Blog</h2>
+                <a href="#" class="active m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+                <div class="right m-item item m-mobile-hide">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" placeholder="Search....">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+
+    </nav>
+
+    <!--中间内容-->
+    <div class="m-container m-padded-tb-big m-opacity-small">
+        <div class="ui container">
+            <div class="ui stackable grid">
+                <!--左边博客列表-->
+                <div class="eleven wide column animated bounceInLeft">
+                    <!--header-->
+                    <div class="ui top attached segment">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <h3 class="ui teal header">博客</h3>
+                            </div>
+                            <div class="right aligned column">
+                                共<h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.totalElements}"> 14 </h2>篇
+                            </div>
+                        </div>
+                    </div>
+                    <!--content-->
+                    <div class="ui  attached  segment">
+                        <div class="ui padded vertical segment m-padded-tb-large" th:each="blog : ${page.content}">
+                             <div class="ui middle aligned mobile reversed stackable grid" >
+                                 <div class="eleven wide column">
+                                     <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你知道理解什么是财富吗？</a></h3>
+                                     <p class="m-text" th:text="|${blog.description}......|">感谢老师的举荐，但是十分抱歉。听了老师的话，我确实认真考虑过了，但是考虑到大三将是学业上非常重要的一年，并且我下学期课程非常多，我想多学专业，有机会也要做项目，所以我要拒绝您的好意了，就不当部长了。</p>
+                                     <div class="ui grid">
+                                         <div class="eleven wide column">
+                                              <div class="ui horizontal link list">
+                                                  <div class="item">
+                                                      <img th:src="@{${blog.user.avatar}}" src="../static/images/Beau.jpg"  alt="" class="ui avatar image">
+                                                      <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}">詹铠铨</a></div>
+                                                  </div>
+                                                  <div class="item">
+                                                      <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-7-19</span>
+                                                  </div>
+                                                  <div class="item">
+                                                      <i class="eye icon"></i><span th:text="${blog.views}">1024</span>
+                                                  </div>
+                                              </div>
+                                         </div>
+                                         <div class="right aligned five wide column">
+                                             <a href="#" target="_blank" class="ui teal basic label m-padded-tiny" th:text="${blog.type.name}">认知升级</a>
+                                         </div>
+                                     </div>
+                                 </div>
+
+                                 <div class="five wide column">
+                                    <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                        <img th:src="@{${blog.firstPicture}}" src="../static/images/123.jpg" alt="" class="ui rounded image">
+                                    </a>
+                                 </div>
+
+                             </div>
+                         </div>
+
+
+                    </div>
+                    <!--footer-->
+                    <div class="ui bottom attached top attached segment" th:if="${page.totalPages}>1">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <a href="#" th:href="@{/(page=${page.number}-1)}" th:unless="${page.first}" class="ui mini teal basic button">上一页</a>
+                            </div>
+                            <div class="right aligned column">
+                                <a href="#" th:href="@{/(page=${page.number}+1)}" th:unless="${page.last}" class="ui mini teal basic button">下一页</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--右边的top-->
+                <div class="five wide column animated bounceInRight">
+                    <!--分类-->
+                    <div class="ui segments">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="idea icon"></i>分类
+                                </div>
+                                <div class="right aligned column">
+                                    <a href="#" th:href="@{/types/-1}" target="_blank">more <i class="angle double right icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui teal segment">
+                            <div class="ui fluid vertical menu">
+                                <a href="#" th:href="@{/types/{id}(id=${type.id})}" target="_blank" class="item"  th:each="type : ${types}">
+                                    <span th:text="${type.name}">学习日记</span>
+                                    <div class="ui teal basic left pointing label" th:text="${#arrays.length(type.blogs)}">13</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--标签-->
+                    <div class="ui segments m-margin-top-large">
+                        <div class="ui secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="tags icon"></i>标签
+                                </div>
+                                <div class="right aligned column">
+                                    <a href="#" th:href="@{/tags/-1}"  target="_blank">more <i class="angle double right icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="ui teal segment" >
+                                <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny" th:each="tag : ${tags}">
+                                    <span th:text="${tag.name}">方法论</span> <div class="detail" th:text="${#arrays.length(tag.blogs)}">12</div>
+                                </a>
+                            </div>
+                        </div>
+
+                    <!--最新推荐-->
+                    <div class="ui segments m-margin-top-large">
+                        <div class="ui secondary segment ">
+                            <i class="bookmark icon"></i>最新推荐
+                        </div>
+                        <div class="ui segment" th:each="blog : ${recommendBlogs}">
+                            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black m-text-thin" th:text="${blog.title}">用户故事(User Story)</a>
+                        </div>
+                    </div>
+
+                    <!--二维码-->
+                    <h5 class="ui horizontal divider header m-margin-top-large">扫码关注我</h5>
+                    <div class="ui centered card" style="width: 11em">
+                        <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" alt="" class="ui rounded image" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--底部footer-->
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img th:src="@{/images/wechat.jpg}" src="../static/images/wechat.jpg" class="ui rounded image" alt="" style="width:110px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">用户故事(User Story)</a>
+                        <a href="#" class="item">用户故事(User Story)</a>
+                        <a href="#" class="item">用户故事(User Story)</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email: 2780296704@qq.com</a>
+                        <a href="#" class="item">QQ:  2780296704</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">Blog</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright @ 2019 - 2020 Zhankaiquan Designed by Zhankaiquan</p>
+        </div>
+
+
+    </footer>
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script  src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+    <script>
+        $('.menu.toggle').click(function () {
+            $('.m-item').toggleClass('m-mobile-hide');
+        })
+
+        $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+    </script>
+    <!--代码放置于</body>上方-->
+
+    <script>
+        !function(){
+            function n(n,e,t){
+                return n.getAttribute(e)||t
+            }
+            function e(n){
+                return document.getElementsByTagName(n)
+            }
+            function t(){
+                var t=e("script"),o=t.length,i=t[o-1];
+                return{
+                    l:o,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),c:n(i,"color","0,0,0"),n:n(i,"count",99)
+                }
+            }
+            function o(){
+                a=m.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,
+                    c=m.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight
+            }
+            function i(){
+                r.clearRect(0,0,a,c);
+                var n,e,t,o,m,l;
+                s.forEach(function(i,x){
+                    for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>a||i.x<0?-1:1,i.ya*=i.y>c||i.y<0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e<u.length;e++)n=u[e],
+                    null!==n.x&&null!==n.y&&(o=i.x-n.x,m=i.y-n.y,
+                        l=o*o+m*m,l<n.max&&(n===y&&l>=n.max/2&&(i.x-=.03*o,i.y-=.03*m),
+                        t=(n.max-l)/n.max,r.beginPath(),r.lineWidth=t/2,r.strokeStyle="rgba("+d.c+","+(t+.2)+")",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))
+                }),
+                    x(i)
+            }
+            var a,c,u,m=document.createElement("canvas"),
+                d=t(),l="c_n"+d.l,r=m.getContext("2d"),
+                x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||
+                    function(n){
+                        window.setTimeout(n,1e3/45)
+                    },
+                w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(m),o(),window.onresize=o,
+                window.onmousemove=function(n){
+                    n=n||window.event,y.x=n.clientX,y.y=n.clientY
+                },
+                window.onmouseout=function(){
+                    y.x=null,y.y=null
+                };
+            for(var s=[],f=0;d.n>f;f++){
+                var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})
+            }
+            u=s.concat([y]),
+                setTimeout(function(){i()},100)
+        }();
+    </script>
+</body>
+
+</html>
