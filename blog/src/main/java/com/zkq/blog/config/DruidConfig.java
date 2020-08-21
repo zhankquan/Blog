@@ -26,7 +26,7 @@ public class DruidConfig {
     }
 
     //配置Druid的监控
-    //1、配置也高管理后台的Servlet
+    //1、配置管理后台的Servlet
     @Bean
     public ServletRegistrationBean staViewServlet() {
         ServletRegistrationBean bean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");

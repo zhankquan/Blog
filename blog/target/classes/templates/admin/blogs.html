@@ -139,23 +139,27 @@
     <br>
     <br>
     <!--底部footer-->
-    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment m-padded-tb-massive">
+    <footer class="ui inverted vertical segment m-padded-tb-massive animated bounceInUp m-opacity">
         <div class="ui center aligned container">
             <div class="ui inverted divided stackable grid">
                 <div class="three wide column">
                     <div class="ui inverted link list">
                         <div class="item">
-                            <img th:src="@{/images/wechat.jpg}" src="../../static/images/wechat.jpg" class="ui rounded image" alt="" style="width:110px">
+                            <img th:src="@{/images/wechat.jpg}" src="../static/images/wechat.jpg" class="ui rounded image" alt="" style="width:110px">
                         </div>
                     </div>
                 </div>
                 <div class="three wide column">
                     <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
-                    <div class="ui inverted link list">
-                        <a href="#" class="item">用户故事(User Story)</a>
-                        <a href="#" class="item">用户故事(User Story)</a>
-                        <a href="#" class="item">用户故事(User Story)</a>
+                    <div id="newblog-container">
+                        <div class="ui inverted link list" th:fragment="newblogList">
+                            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank"  class="item m-text-thin" th:each="blog : ${newblogs}" th:text="${blog.title}">我的博客</a>
+                            <!--                    <a href="#" th:href="@{/}" class="item">我的博客</a>-->
+                            <!--                    <a href="#" th:href="@{/about}" class="item">关于我</a>-->
+
+                        </div>
                     </div>
+
                 </div>
                 <div class="three wide column">
                     <h4 class="ui inverted header m-text-thin m-text-spaced ">联系我</h4>
@@ -170,8 +174,12 @@
                 </div>
             </div>
             <div class="ui inverted section divider"></div>
-            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright @ 2019 - 2020 Zhankaiquan Designed by Zhankaiquan</p>
+
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright @ 2020  Zhankaiquan Designed by Zhankaiquan</p>
+            <a href="http://www.beian.miit.gov.cn" target="_blank"><span style="font-weight: 300">粤ICP备20062996号</span></a>
         </div>
+
+
     </footer>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>

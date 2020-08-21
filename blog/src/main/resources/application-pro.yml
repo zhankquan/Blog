@@ -1,5 +1,26 @@
 spring:
+  mail:
+    username: 2780296704@qq.com
+    password: vdhrgzzzmmdqdhad
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
 
+
+#  spring.mail.username=2780296704@qq.com
+#  spring.mail.password=vdhrgzzzmmdqdhad
+#  spring.mail.host=smtp.qq.com
+#  spring.mail.properties.mail.smtp.ssl.enable=true
+#  spring.mail.properties.mail.smtp.auth=true
+#  spring.mail.properties.mail.smtp.starttls.enable=true
+#  spring.mail.properties.mail.smtp.starttls.required=true
 
 
   datasource:
@@ -44,3 +65,4 @@ logging:
     path: log/blog-pro.log
 server:
   port: 8081
+

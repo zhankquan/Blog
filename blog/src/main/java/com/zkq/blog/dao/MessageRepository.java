@@ -12,4 +12,6 @@ public interface MessageRepository extends JpaRepository<Message,Long> {
 
     List<Message> findByParentMessageIsNull(Sort sort);
 
+    Message findMessageById(Long id);
+
 }

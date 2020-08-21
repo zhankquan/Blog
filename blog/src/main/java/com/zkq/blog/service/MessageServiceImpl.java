@@ -1,12 +1,16 @@
 package com.zkq.blog.service;
 import com.zkq.blog.dao.MessageRepository;
 import com.zkq.blog.po.Message;
+import com.zkq.blog.po.News;
+import com.zkq.blog.po.User;
+import org.springframework.amqp.core.AmqpAdmin;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -14,6 +18,12 @@ import java.util.List;
 
 @Service
 public class MessageServiceImpl implements MessageService{
+
+    @Autowired
+    AmqpAdmin amqpAdmin;
+
+    @Autowired
+    RabbitTemplate rabbitTemplate;
 
     @Autowired
     private MessageRepository messageRepository;
@@ -26,7 +36,13 @@ public class MessageServiceImpl implements MessageService{
     }
 
     @Override
-    public Message saveMessage(Message message) {
+    public Message findMessageById(Long id) {
+        Message message = messageRepository.findMessageById(id);
+        return message;
+    }
+
+    @Override
+    public Message saveMessage(Message message, HttpSession session) {
         Long parentMessageId=message.getParentMessage().getId();
         if(parentMessageId!=-1){
             message.setParentMessage(messageRepository.getOne(parentMessageId));
@@ -34,6 +50,18 @@ public class MessageServiceImpl implements MessageService{
             message.setParentMessage(null);
         }
         message.setCreateTime(new Date());
+
+        try{
+            User user=(User)session.getAttribute("user");
+            if(user==null){
+                News n = new News(message.getNickname(),message.getEmail(),message.getContent(),
+                        new Date(),new Long(0),true);
+                rabbitTemplate.convertAndSend("exchange.direct.blog","message",n);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
         return messageRepository.save(message);
     }
 

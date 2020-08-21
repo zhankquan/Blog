@@ -2,5 +2,5 @@ FROM java:8
 VOLUME /tmp
 ADD blog-0.0.1-SNAPSHOT.jar app.jar
 RUN bash -c 'touch /app.jar'
-EXPOSE 8080
+EXPOSE 80
 ENTRYPOINT [ "java", "-Djava.security.egd=file:/dev/./urandom", "-jar", "/app.jar" ]

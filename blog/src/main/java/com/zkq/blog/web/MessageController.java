@@ -1,14 +1,13 @@
 package com.zkq.blog.web;
 
-import com.zkq.blog.po.Comment;
 import com.zkq.blog.po.Message;
 import com.zkq.blog.po.User;
+import com.zkq.blog.service.MailService;
 import com.zkq.blog.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
@@ -20,6 +19,8 @@ public class MessageController {
     @Autowired
     private MessageService messageService;
 
+    @Autowired
+    private MailService mailService;
 
     private String avatar="https://picsum.photos/id/305/400/400";
 
@@ -50,7 +51,13 @@ public class MessageController {
         }
         message.setCreateTime(new Date());
 
-        messageService.saveMessage(message);
+        messageService.saveMessage(message,session);
+
+        if(message.getParentMessage()!=null){
+            Message message1 = messageService.findMessageById(message.getParentMessage().getId());
+                mailService.contextLoads(message1.getEmail(),message.getContent(),"http://hellokq.top/Messages");
+
+        }
         return "redirect:/messages";
     }
 }

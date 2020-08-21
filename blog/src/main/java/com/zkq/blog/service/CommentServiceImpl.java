@@ -2,18 +2,29 @@ package com.zkq.blog.service;
 
 import com.zkq.blog.dao.CommentRepository;
 import com.zkq.blog.po.Comment;
+import com.zkq.blog.po.News;
+import com.zkq.blog.po.User;
+import org.springframework.amqp.core.AmqpAdmin;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Service
 public class CommentServiceImpl implements CommentService{
+
+    @Autowired
+    AmqpAdmin amqpAdmin;
+
+    @Autowired
+    RabbitTemplate rabbitTemplate;
 
     @Autowired
     private CommentRepository commentRepository;
@@ -25,9 +36,15 @@ public class CommentServiceImpl implements CommentService{
         return eachComment(comments);
     }
 
+    @Override
+    public Comment findCommentById(Long CommentId) {
+        Comment comment = commentRepository.findCommentById(CommentId);
+        return comment;
+    }
+
     @Transactional
     @Override
-    public Comment saveComment(Comment comment) {
+    public Comment saveComment(Comment comment, HttpSession session) {
         Long parentCommentId=comment.getParentComment().getId();
         if(parentCommentId!=-1){
             comment.setParentComment(commentRepository.getOne(parentCommentId));
@@ -35,6 +52,19 @@ public class CommentServiceImpl implements CommentService{
             comment.setParentComment(null);
         }
         comment.setCreateTime(new Date());
+
+        try{
+            User user=(User)session.getAttribute("user");
+            if(user==null){
+                News n = new News(comment.getNickname(),comment.getEmail(),comment.getContent(),
+                        new Date(),comment.getBlog().getId(),false);
+                rabbitTemplate.convertAndSend("exchange.direct.blog","comment",n);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+
         return commentRepository.save(comment);
     }
 

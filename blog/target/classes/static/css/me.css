@@ -126,6 +126,11 @@ body {
     top: 15px !important;
     right: 0px !important;
 }
+.m-right-middle{
+    position: absolute !important;
+    top: 220px !important;
+    right: 100px !important;
+}
 
 .m-right-mini{
     position: absolute !important;
@@ -181,6 +186,14 @@ body {
 
 .m-teal{
     color:#00B5AD !important;
+}
+
+.m-orange{
+    color: orange !important;
+}
+
+.m-red{
+    color: red !important;
 }
 
 @media screen and (max-width: 768px){

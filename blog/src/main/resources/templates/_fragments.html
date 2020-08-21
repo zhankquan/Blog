@@ -22,6 +22,7 @@
 <nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini animated bounceInDown m-opacity">
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
+           
             <h2 class="ui teal header item">Kq's Blog</h2>
             <a href="#" th:href="@{/}" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="home icon"></i>首页</a>
             <a href="#" th:href="@{/types/-1}" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>分类</a>
@@ -89,10 +90,12 @@
             </div>
         </div>
         <div class="ui inverted section divider"></div>
-        <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright @ 2019 - 2020 Zhankaiquan Designed by Zhankaiquan</p>
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
-                src="//music.163.com/outchain/player?type=2&id=1456495375&auto=1&height=66"></iframe>
+
+        <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright @ 2020  Zhankaiquan Designed by Zhankaiquan</p>
+        <a href="http://www.beian.miit.gov.cn" target="_blank"><span style="font-weight: 300">粤ICP备20062996号</span></a>
     </div>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 class="m-right-middle"
+            src="//music.163.com/outchain/player?type=2&id=1426649237&auto=1&height=66"></iframe>
 
 
 </footer>

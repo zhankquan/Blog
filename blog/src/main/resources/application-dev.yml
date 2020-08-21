@@ -1,5 +1,29 @@
 spring:
+  mail:
+    username: 2780296704@qq.com
+    password: vdhrgzzzmmdqdhad
+    host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
+  session:
+    timeout: 18000
 
+  rabbitmq:
+    host: 121.36.39.200
+    username: guest
+    password: guest
+
+  #  spring.rabbitmq.host=121.36.39.200
+  #  spring.rabbitmq.username=guest
+  #  spring.rabbitmq.password=guest
+  #spring.rabbitmq.virtual-host=
 
   datasource:
     username: root
@@ -15,8 +39,6 @@ spring:
     show-sql: true
 
 
-
-    #   \u6570\u636E\u6E90\u5176\u4ED6\u914D\u7F6E
     initialSize: 5
     minIdle: 5
     maxActive: 20
@@ -29,7 +51,6 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
 
-    #   \u914D\u7F6E\u76D1\u63A7\u7EDF\u8BA1\u62E6\u622A\u7684filters\uFF0C\u53BB\u6389\u540E\u76D1\u63A7\u754C\u9762sql\u65E0\u6CD5\u7EDF\u8BA1\uFF0C'wall'\u7528\u4E8E\u9632\u706B\u5899
     filters: stat,wall,slf4j
     maxPoolPreparedStatementPerConnectionSize: 20
     useGlobalDataSourceStat: true
@@ -42,4 +63,5 @@ logging:
   file:
     path: log/blog-dev.log
 server:
-  port: 8080
+  port: 80
+
